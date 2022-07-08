@@ -4,6 +4,7 @@ public class Ticket {
 	private double ticketPrice;
 	private int ticketId;
 	private String ticketType;
+	private int NumberOfTicket;
 	
 	public Ticket(double ticketPrice, int ticketId, String ticketType) {
 		this.ticketPrice = ticketPrice;

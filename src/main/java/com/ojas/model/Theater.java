@@ -25,8 +25,6 @@ public class Theater {
 
 	
 
-	
-
 	public int getTheaterID() {
 		return theaterID;
 	}

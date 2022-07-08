@@ -14,10 +14,13 @@ public interface TicketDAO {
 	public List<Ticket> viewAllTickets();
 	public void updateProduct(int productId);
 	public void deleteProduct(int prodoctId);
-	public void order();
 	public void back();
 
 	public void addTHEATER();
 	public void viewTheater();
 	public List<Theater> viewAllTheaters();
+	public void updateTheater(int theaterID);
+	public void deleteTheater(int theaterID);
+	
+	public void TicketBooking();
 }

@@ -49,12 +49,12 @@ public class TheterDetails {
 			break;
 		case 4:
 			System.out.println("Which Theater do you want to update ?");
-			
+			dao.updateTheater(sc.nextInt());
 			adminMainMenu();
 			break;
 		case 5:
 			System.out.println("Which Theater do you want to delete ?");
-			
+			dao.deleteTheater(sc.nextInt());
 			adminMainMenu();
 			break;
 		case 6:

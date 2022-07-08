@@ -10,6 +10,7 @@ public class MainCls {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		TicketDAOImpl tc = new TicketDAOImpl();
 		while (true) {
 			System.out.println("-------------------------------");
 			System.out.println("|  TICKET MANAGEMENT SYSTEM  |");
@@ -26,7 +27,7 @@ public class MainCls {
 				TheterDetails.adminMainMenu();
 				break;
 			case 2:
-				//TicketDAOImpl.customerMainMenu();
+				tc.TicketBooking();
 				break;
 			case 3:
 				System.exit(0);
