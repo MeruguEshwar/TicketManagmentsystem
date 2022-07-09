@@ -3,6 +3,7 @@ package com.ojas.AdminMenu;
 import java.util.List;
 import java.util.Scanner;
 
+import com.ojas.dao.TheaterDAOImpl;
 import com.ojas.dao.TicketDAOImpl;
 import com.ojas.model.Theater;
 
@@ -10,6 +11,7 @@ public class TheterDetails {
 
 	static Scanner sc = new Scanner(System.in);
 	static TicketDAOImpl dao = new TicketDAOImpl();
+	static TheaterDAOImpl theaterdao = new TheaterDAOImpl();
 
 	public static void adminMainMenu() {
 		System.out.println("--------------------------");
@@ -27,19 +29,19 @@ public class TheterDetails {
 
 		switch (choice) {
 		case 1:
-			dao.addTHEATER();
+			theaterdao.addTHEATER();
 			adminMainMenu();
 			break;
 		case 2:
 			System.out.println("Enter theaters Id ?");
-			Theater searchTheater = dao.viewTheater(sc.nextInt());
+			Theater searchTheater = theaterdao.viewTheater(sc.nextInt());
 			System.out.println("TheaterID" + "\t" + "TheaterNAME" + "\t" + "TheaterCapacity" + "\t" + "TheaterType" + "\t"+ "TheaterLocation");
 			System.out.println("-------------------------------------------------------------------------------------------------------------");
 			System.out.println(searchTheater);
 			adminMainMenu();
 			break;
 		case 3:
-			List<Theater> the = dao.viewAllTheaters();
+			List<Theater> the = theaterdao.viewAllTheaters();
 			System.out.println("TheaterID" + "\t" + "TheaterNAME" +"\t" +"TheaterCapacity" +"\t"+ "TheaterType" + "\t" + "TheaterLocation");
 			System.out.println("----------------------------------------------------------------------------------------------------------");
 			for (Theater viewtheater : the) {
@@ -49,16 +51,16 @@ public class TheterDetails {
 			break;
 		case 4:
 			System.out.println("Which Theater do you want to update ?");
-			dao.updateTheater(sc.nextInt());
+			theaterdao.updateTheater(sc.nextInt());
 			adminMainMenu();
 			break;
 		case 5:
 			System.out.println("Which Theater do you want to delete ?");
-			dao.deleteTheater(sc.nextInt());
+			theaterdao.deleteTheater(sc.nextInt());
 			adminMainMenu();
 			break;
 		case 6:
-			dao.back();
+			theaterdao.back();
 			break;
 		default:
 			System.out.println("Please select your choice range 1-6 only");

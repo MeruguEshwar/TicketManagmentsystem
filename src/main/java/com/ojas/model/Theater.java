@@ -5,7 +5,7 @@ public class Theater {
 
 	private int theaterID;
 	private String theaterName;
-	private double theaterCapacity;
+	private int theaterCapacity;
 	private String theaterType;
 	private String theaterLocation;
 	
@@ -14,7 +14,7 @@ public class Theater {
 		
 	}
 	
-	public Theater(int theaterID, String theaterName, double theaterCapacity, String theaterType, String theaterLocation)
+	public Theater(int theaterID, String theaterName, int theaterCapacity, String theaterType, String theaterLocation)
 	{
 		this.theaterID = theaterID;
 		this.theaterName = theaterName;
@@ -45,7 +45,7 @@ public class Theater {
 		return theaterCapacity;
 	}
 
-	public void setTheaterCapacity(double theaterCapacity) {
+	public void setTheaterCapacity(int theaterCapacity) {
 		this.theaterCapacity = theaterCapacity;
 	}
 

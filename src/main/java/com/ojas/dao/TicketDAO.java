@@ -7,20 +7,9 @@ import com.ojas.model.Ticket;
 
 
 public interface TicketDAO {
-	
-	public void addTicket();
-	
-	public Ticket viewProduct(int productId);
-	public List<Ticket> viewAllTickets();
-	public void updateProduct(int productId);
-	public void deleteProduct(int prodoctId);
-	public void back();
 
-	public void addTHEATER();
-	public void viewTheater();
-	public List<Theater> viewAllTheaters();
-	public void updateTheater(int theaterID);
-	public void deleteTheater(int theaterID);
+	public Ticket viewTickets(int productId);
+	public List<Ticket> viewAllTickets();
 	
 	public void TicketBooking();
 }
