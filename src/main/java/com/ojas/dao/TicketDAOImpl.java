@@ -26,45 +26,63 @@ public class TicketDAOImpl implements TicketDAO {
 	static int UpperBolconeySeats = 20;
 	int Totalseatscapacity = MiddleBolconeySeats + LowerconeySeats + UpperBolconeySeats;
 	int AvailableTickets;
-
+	static int TheaterName;
+	static TheaterDAOImpl tdi = new TheaterDAOImpl();
+	
 	public static void getcustomertheatername() {
-		TheaterDAOImpl tdi = new TheaterDAOImpl();
-		System.out.println(tdi.viewAllTheaters());
-		System.out.println("Choose Your Theater...");
-		String TheaterName = sc.next();
+			System.out.println(tdi.viewAllTheaters());
+			
+			System.out.println("Choose Your Theater...");
+			TheaterName = sc.nextInt();
+//			if(tdi.originaList.get()==TheaterName) {
+//				
+//			}
+			for(Theater nani:tdi.originaList) {
+				if(nani.getTheaterID() == TheaterName) {
+					System.out.println("Welcome to theater:");
+					//System.out.println(nani.getTheaterID());
+				}else {
+					System.out.println("Entered theater id not found..");
+				}
+				
+			}
+			
 	}
 
 	public void TicketBooking() {
 		System.out.println("Total Theater seat capacity :" + Totalseatscapacity);
-		System.out.println("If You Want to Book the tickets 1.Bookings 2.exit");
-		choice = sc.nextInt();
+        System.out.println("If You Want to Book the tickets");
+        System.out.println("Press 1.Bookings");
+        System.out.println("Press 2.exit");
+        int choice = sc.nextInt();
 
-		System.out.println("Press 1.UpperBalconey");
-		System.out.println("Press 2.MiddleBalconey");
-		System.out.println("Press 3.LowerBalconey");
-		int balconey = sc.nextInt();
 
-		switch (choice) {
-		case 1:
-			System.out.println("How Many Seates Do you want");
-			numberOfSeats = sc.nextInt();
-			switch (balconey) {
-			case 1:
-				UpperBolconey();
-				break;
-			case 2:
-				MiddleBolconey();
-				break;
-			case 3:
-				LowerBolconey();
-				break;
-			default:
-				System.out.println("Invalid Pls try again..");
-			}
-		case 2:
-			System.out.println("Please Enter Valid Option:");
-		}
-
+        switch (choice) {
+        case 1:
+            System.out.println("Press 1.UpperBalconey");
+            System.out.println("Press 2.MiddleBalconey");
+            System.out.println("Press 3.LowerBalconey");
+            int balconey = sc.nextInt();
+            System.out.println("How Many Seates Do you want");
+            numberOfSeats = sc.nextInt();
+            switch (balconey) {
+            case 1:
+                UpperBolconey();
+                break;
+            case 2:
+                MiddleBolconey();
+                break;
+            case 3:
+                LowerBolconey();
+                break;
+            default:
+                System.out.println("Invalid Pls try again..");
+            }
+            break;
+        case 2: System.out.println("Please Enter Valid Option:");
+                break;
+        default:System.out.println("Invalid pls try again..");
+        }		
 	}
 
 	public static void UpperBolconey() {

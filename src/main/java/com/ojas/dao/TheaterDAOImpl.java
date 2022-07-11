@@ -18,6 +18,9 @@ public class TheaterDAOImpl implements TheaterDAO{
 	static int choice;
 	static int numberOfSeats;
 	static int res;
+	//int theatercapacityvalue;
+	
+	
 	
 	public void addTHEATER() {
 		while (n == 1) {
@@ -30,7 +33,8 @@ public class TheaterDAOImpl implements TheaterDAO{
 			theater.setTheaterName(sc.next());
 
 			System.out.println("Enter theater Capacity ?");
-			theater.setTheaterCapacity(sc.nextInt());
+			int theatercapacityvalue = theater.setTheaterCapacity(sc.nextInt());
+			//System.out.println("Capacity is:"+theatercapacityvalue);
 
 			System.out.println("Enter theater Type ?");
 			theater.setTheaterType(sc.next());
@@ -46,6 +50,9 @@ public class TheaterDAOImpl implements TheaterDAO{
 		System.out.println("Successfully Products added.....");
 	}
 
+	public double theatercapacity() {
+		return theater.getTheaterCapacity();
+	}
 	
 	public Theater viewTheater(int theaterID) {
 		Theater theater = new Theater();

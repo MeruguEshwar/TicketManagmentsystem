@@ -45,8 +45,8 @@ public class Theater {
 		return theaterCapacity;
 	}
 
-	public void setTheaterCapacity(int theaterCapacity) {
-		this.theaterCapacity = theaterCapacity;
+	public int setTheaterCapacity(int theaterCapacity) {
+		return this.theaterCapacity = theaterCapacity;
 	}
 
 	public String getTheaterType() {

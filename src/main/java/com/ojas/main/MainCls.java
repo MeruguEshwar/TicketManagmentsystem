@@ -3,6 +3,7 @@ package com.ojas.main;
 import java.util.Scanner;
 
 import com.ojas.AdminMenu.TheterDetails;
+import com.ojas.dao.TheaterDAOImpl;
 import com.ojas.dao.TicketDAOImpl;
 
 import OTPGeneration.TestClass;
@@ -30,16 +31,6 @@ public class MainCls {
 				break;
 			case 2:
 				testclass.GenerateOtp();
-				System.out.println("Enter OTP:");
-				int sotp = sc.nextInt();
-				if(testclass.getOtp() == sotp) {
-					System.out.println("login Sucessfull...");
-					TicketDAOImpl ticketDAOImpl = new TicketDAOImpl();
-					ticketDAOImpl.getcustomertheatername();
-					ticketDAOImpl.TicketBooking();
-				}else {
-					System.out.println("Please Enter Valid OTP:");
-				}
 				break;
 			case 3:
 				System.exit(0);
