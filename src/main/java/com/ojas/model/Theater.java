@@ -1,29 +1,24 @@
 package com.ojas.model;
 
 public class Theater {
-	
 
 	private int theaterID;
 	private String theaterName;
-	private int theaterCapacity;
+	private static int theaterCapacity;
 	private String theaterType;
 	private String theaterLocation;
-	
 
-	public Theater(){
-		
+	public Theater() {
+
 	}
-	
-	public Theater(int theaterID, String theaterName, int theaterCapacity, String theaterType, String theaterLocation)
-	{
+
+	public Theater(int theaterID, String theaterName, int theaterCapacity, String theaterType, String theaterLocation) {
 		this.theaterID = theaterID;
 		this.theaterName = theaterName;
 		this.theaterCapacity = theaterCapacity;
 		this.theaterType = theaterType;
 		this.theaterLocation = theaterLocation;
 	}
-
-	
 
 	public int getTheaterID() {
 		return theaterID;
@@ -41,7 +36,7 @@ public class Theater {
 		this.theaterName = theaterName;
 	}
 
-	public double getTheaterCapacity() {
+	public static double getTheaterCapacity() {
 		return theaterCapacity;
 	}
 
@@ -66,7 +61,8 @@ public class Theater {
 	}
 
 	public String toString() {
-		return theaterID+"\t\t"+theaterName+"\t\t"+theaterCapacity+"\t\t"+theaterType+"\t\t"+theaterLocation;
+		return theaterID + "\t\t" + theaterName + "\t\t" + theaterCapacity + "\t\t" + theaterType + "\t\t"
+				+ theaterLocation;
 	}
-	
+
 }

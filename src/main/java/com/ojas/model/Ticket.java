@@ -5,7 +5,7 @@ public class Ticket {
 	private int ticketId;
 	private String ticketType;
 	private int NumberOfTicket;
-	
+
 	public Ticket(double ticketPrice, int ticketId, String ticketType) {
 		this.ticketPrice = ticketPrice;
 		this.ticketId = ticketId;
@@ -35,8 +35,8 @@ public class Ticket {
 	public void setTicketType(String ticketType) {
 		this.ticketType = ticketType;
 	}
-	
-	public String toString(){
-		return ticketPrice+"\t"+ticketId+"\t"+ticketType;
+
+	public String toString() {
+		return ticketPrice + "\t" + ticketId + "\t" + ticketType;
 	}
 }

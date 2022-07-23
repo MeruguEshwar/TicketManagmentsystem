@@ -9,11 +9,10 @@ import com.ojas.model.Theater;
 
 public class TheterDetails {
 
-	static Scanner sc = new Scanner(System.in);
-	static TicketDAOImpl dao = new TicketDAOImpl();
-	static TheaterDAOImpl theaterdao = new TheaterDAOImpl();
+	Scanner sc = new Scanner(System.in);
+	TheaterDAOImpl theaterdao = new TheaterDAOImpl();
 
-	public static void adminMainMenu() {
+	public void adminMainMenu() {
 		System.out.println("--------------------------");
 		System.out.println("|    ADMIN MAIN MENU     |");
 		System.out.println("--------------------------");
@@ -34,16 +33,20 @@ public class TheterDetails {
 			break;
 		case 2:
 			System.out.println("Enter theaters Id ?");
-			Theater searchTheater = theaterdao.viewTheater(sc.nextInt());
-			System.out.println("TheaterID" + "\t" + "TheaterNAME" + "\t" + "TheaterCapacity" + "\t" + "TheaterType" + "\t"+ "TheaterLocation");
-			System.out.println("-------------------------------------------------------------------------------------------------------------");
+			List<Theater> searchTheater = theaterdao.viewTheater(sc.nextInt());
+			System.out.println("TheaterID" + "\t" + "TheaterNAME" + "\t" + "TheaterCapacity" + "\t" + "TheaterType"
+					+ "\t" + "TheaterLocation");
+			System.out.println(
+					"-------------------------------------------------------------------------------------------------------------");
 			System.out.println(searchTheater);
 			adminMainMenu();
 			break;
 		case 3:
 			List<Theater> the = theaterdao.viewAllTheaters();
-			System.out.println("TheaterID" + "\t" + "TheaterNAME" +"\t" +"TheaterCapacity" +"\t"+ "TheaterType" + "\t" + "TheaterLocation");
-			System.out.println("----------------------------------------------------------------------------------------------------------");
+			System.out.println("TheaterID" + "\t" + "TheaterNAME" + "\t" + "TheaterCapacity" + "\t" + "TheaterType"
+					+ "\t" + "TheaterLocation");
+			System.out.println(
+					"----------------------------------------------------------------------------------------------------------");
 			for (Theater viewtheater : the) {
 				System.out.println(viewtheater);
 			}

@@ -8,12 +8,11 @@ import com.ojas.dao.TicketDAOImpl;
 
 import OTPGeneration.TestClass;
 
-
 public class MainCls {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+		TheterDetails theaterDetails = new TheterDetails();
 		TestClass testclass = new TestClass();
 		while (true) {
 			System.out.println("-------------------------------");
@@ -27,7 +26,7 @@ public class MainCls {
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1:
-				TheterDetails.adminMainMenu();
+				theaterDetails.adminMainMenu();
 				break;
 			case 2:
 				testclass.GenerateOtp();
